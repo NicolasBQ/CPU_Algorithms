@@ -18,7 +18,14 @@ while cont:
     elif option == 2:
         roundRobin.roundAlgo()
     elif option == 3:
-        spn.spnAlgo()
+        A = [
+            {'id': 1, 'time': 5},
+            {'id': 2, 'time': 1},
+            {'id': 3, 'time': 11},
+            {'id': 4, 'time': 9},
+            {'id': 5, 'time': 3}
+        ]
+        print(spn.spnAlgo(A))
     elif option == 4:
         srtf.srtfAlgo()
     else:
