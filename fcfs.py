@@ -1,6 +1,30 @@
 from tabulate import tabulate
 
-def fifoAlgo(processes, n):
+def fifoAlgo():
+    print('Ingrese el numero de procesos')
+    n = int(input())
+
+    processes = [] 
+
+    for i in range(n):
+        process = {}
+        print('Ingrese el nombre del proceso ', i + 1)
+        processName = input()
+        print('Ingrese el tiempo de llegada del proceso ', processName)
+        ti = int(input())
+        print('Ingrese el tiempo requerido para el proceso ', processName)
+        tr = int(input())
+
+        process['name'] = processName
+        process['ti'] = ti
+        process['tr'] = tr
+
+        processes.append(process)
+
+    algo(processes, n)
+
+
+def algo(processes, n):
     Tsum = 0
     Esum = 0
     Psum = 0
@@ -40,6 +64,6 @@ def fifoAlgo(processes, n):
     print('Promedio T: ', Taverage)
     print('Promedio E; ', Eaverage)
     print('Promedio P: ', Paverage)
-    
+
 
 

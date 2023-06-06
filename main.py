@@ -1,23 +1,33 @@
 import fcfs
+import roundRobin
+import spn
+import srtf
 
-print('Ingrese el numero de procesos')
-n = int(input())
+cont = True
 
-processes = [] 
+while cont:
+    print("---- Seleccione que algoritmo quisiera ejectutar ----")
+    print("1 - FCFS (First Come, First Serve)")
+    print("2 - Round Robin")
+    print("3 - SPN (Shortest Process Next)")
+    print("4 - SRTF (Shortest Remaining Time First)")
+    option = int(input())
 
-for i in range(n):
-    process = {}
-    print('Ingrese el nombre del proceso ', i + 1)
-    processName = input()
-    print('Ingrese el tiempo de llegada del proceso ', processName)
-    ti = int(input())
-    print('Ingrese el tiempo requerido para el proceso ', processName)
-    tr = int(input())
+    if option == 1:
+        fcfs.fifoAlgo()
+    elif option == 2:
+        roundRobin.roundAlgo()
+    elif option == 3:
+        spn.spnAlgo()
+    elif option == 4:
+        srtf.srtfAlgo()
+    else:
+        print("Opción no registrada")
 
-    process['name'] = processName
-    process['ti'] = ti
-    process['tr'] = tr
+    print("---- Desea Continuar ----")
+    print("1 - Continuar")
+    print("2 - Salir")
+    menuOption = int(input())
 
-    processes.append(process)
-
-fcfs.fifoAlgo(processes, n)
+    if menuOption != 1:
+        cont = False
