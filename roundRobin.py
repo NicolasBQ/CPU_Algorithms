@@ -90,6 +90,11 @@ def algo(processes, n, order):
             init += order['time'][i]
             i += 1
         process['init'].append(init)
+
+
+    Tsum = 0
+    Esum = 0
+    Psum = 0 
     
     for b in range(n):
         i = 0
@@ -102,11 +107,20 @@ def algo(processes, n, order):
         E = T - processes[b]['tr']
         P = T / processes[b]['tr']
 
+        Tsum += T
+        Esum += E
+        Psum += P
+
         process['end'].append(end)
         process['T'].append(T)
         process['E'].append(E)
         process['P'].append(P)
     
+    Taverage = Tsum / n
+    Eaverage = Esum / n
+    Paverage = Psum / n
 
-    
     print(tabulate(process, headers='keys', tablefmt='fancy_grid'))
+    print('T promedio: ', Taverage)
+    print('E promedio: ', Eaverage)
+    print('P promedio: ', Paverage)
