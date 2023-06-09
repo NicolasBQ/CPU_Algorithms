@@ -27,7 +27,21 @@ while cont:
         ]
         print(spn.spnAlgo(A))
     elif option == 4:
-        srtf.srtfAlgo()
+        class Proceso:
+            def __init__(self, nombre, tiempo_llegada, tiempo_proceso):
+                self.nombre = nombre
+                self.tiempo_llegada = tiempo_llegada
+                self.tiempo_rafaga = tiempo_proceso
+                self.tiempo_restante = tiempo_proceso
+
+        proceso = [
+            Proceso('A,', 0, 3),
+            Proceso('B', 1, 5),
+            Proceso('C', 3, 2),
+            Proceso('D', 9, 5 ),
+            Proceso('E', 12, 5)
+        ]
+        srtf.srtfAlgo(proceso)
     else:
         print("Opción no registrada")
 
