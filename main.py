@@ -35,11 +35,10 @@ while cont:
                 self.tiempo_restante = tiempo_proceso
 
         proceso = [
-            Proceso('A,', 0, 3),
-            Proceso('B', 1, 5),
-            Proceso('C', 3, 2),
-            Proceso('D', 9, 5 ),
-            Proceso('E', 12, 5)
+            Proceso('P1,', 0, 2),
+            Proceso('P2', 1, 1),
+            Proceso('P3', 2, 3),
+            Proceso('P4', 3, 2 ),
         ]
         srtf.srtfAlgo(proceso)
     else:
